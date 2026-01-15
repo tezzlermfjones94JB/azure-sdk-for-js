@@ -13,11 +13,11 @@ import {
 import { PageBlobClient, StorageSharedKeyCredential } from "@azure/storage-blob";
 import { delay, Recorder, isLiveMode } from "@azure-tools/test-recorder";
 import { describe, it, assert, beforeEach, afterEach } from "vitest";
-import { createBlobServiceClient, createPageBlobClient } from "./utils/clients.js";
-import { bodyToString, getUniqueName } from "../utils/utils.js";
-import { parseJwt } from "./utils/utils.js";
+import { createBlobServiceClient, createPageBlobClient } from "../../utils/node/clients.js";
+import { bodyToString, getUniqueName } from "../../utils/testHelpers.js";
+import { parseJwt } from "../../utils/node/testHelpers.js";
 import { createTestCredential } from "@azure-tools/test-credential";
-import { STORAGE_SCOPE, SERVICE_VERSION } from "../utils/constants.js";
+import { STORAGE_SCOPE, SERVICE_VERSION } from "../../utils/serviceConstants.js";
 import { isRestError } from "@azure/core-rest-pipeline";
 import {
   getAccountKey,

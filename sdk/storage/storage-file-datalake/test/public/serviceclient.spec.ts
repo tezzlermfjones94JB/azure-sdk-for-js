@@ -9,8 +9,8 @@ import type {
   ServiceListFileSystemsSegmentResponse,
 } from "@azure/storage-file-datalake";
 import type { DataLakeServiceClient } from "@azure/storage-file-datalake";
-import { createDataLakeServiceClient } from "./utils/clients.js";
-import { getUniqueName } from "./utils/utils.js";
+import { createDataLakeServiceClient } from "../utils/clients.js";
+import { getUniqueName } from "../utils/testHelpers.js";
 import { describe, it, assert, beforeEach, afterEach } from "vitest";
 import { getEncryptionScope1 } from "../utils/injectables.js";
 

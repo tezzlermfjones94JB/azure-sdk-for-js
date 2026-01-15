@@ -9,8 +9,8 @@ import type {
   BlockBlobClient,
 } from "@azure/storage-blob";
 import { describe, it, assert, beforeEach, afterEach } from "vitest";
-import { createBlobServiceClient } from "../utils/clients.js";
-import { getUniqueName } from "../utils/utils.js";
+import { createBlobServiceClient } from "../../utils/clients.js";
+import { getUniqueName } from "../../utils/testHelpers.js";
 
 describe("Blob versioning - browser", () => {
   let blobServiceClient: BlobServiceClient;

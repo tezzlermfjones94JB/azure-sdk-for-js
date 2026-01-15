@@ -6,9 +6,9 @@ import type { ContainerClient, BlobServiceClient } from "@azure/storage-blob";
 import { RestError } from "@azure/storage-blob";
 import { Recorder, isPlaybackMode } from "@azure-tools/test-recorder";
 import { describe, it, assert, beforeEach, afterEach } from "vitest";
-import { createBlobServiceClient } from "./utils/clients.js";
-import { getUniqueName } from "./utils/utils.js";
-import { injectorPolicy, injectorPolicyName } from "./utils/injectorPolicy.js";
+import { createBlobServiceClient } from "../utils/clients.js";
+import { getUniqueName } from "../utils/testHelpers.js";
+import { injectorPolicy, injectorPolicyName } from "../utils/InjectorPolicy.js";
 
 describe("RetryPolicy", () => {
   let blobServiceClient: BlobServiceClient;

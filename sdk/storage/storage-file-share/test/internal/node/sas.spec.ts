@@ -23,10 +23,10 @@ import { createTestCredential } from "@azure-tools/test-credential";
 import {
   createShareServiceClient,
   createTokenServiceClient,
-} from "../../public/node/utils/clients.js";
-import { getUniqueName } from "../../public/utils/utils.js";
-import { parseJwt, getSignatureFromSasUrl } from "../../public/node/utils/utils.js";
-import { ensureClientRecording } from "../../public/utils/recorder.js";
+} from "../../utils/node/clients.js";
+import { getUniqueName } from "../../utils/testHelpers.js";
+import { parseJwt, getSignatureFromSasUrl } from "../../utils/node/testHelpers.js";
+import { ensureClientRecording } from "../../utils/recorder.js";
 import { getAccountKey } from "../../utils/injectables.js";
 
 describe.runIf(getAccountKey())("Shared Access Signature (SAS) generation Node.js only", () => {

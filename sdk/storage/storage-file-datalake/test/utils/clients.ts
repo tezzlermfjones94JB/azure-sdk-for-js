@@ -15,7 +15,7 @@ import {
 import type { AnonymousCredential } from "@azure/storage-blob";
 import { createTestCredential } from "@azure-tools/test-credential";
 import { ensureClientRecording } from "./recorder.js";
-import { getDfsAccountUrl, getDfsSoftDeleteAccountUrl } from "../../utils/injectables.js";
+import { getDfsAccountUrl, getDfsSoftDeleteAccountUrl } from "./injectables.js";
 
 export type TestAccountKind = "default" | "softDelete";
 

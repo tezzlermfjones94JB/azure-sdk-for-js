@@ -6,7 +6,7 @@ import { newPipeline } from "@azure/storage-queue";
 import type { TokenCredential } from "@azure/core-auth";
 import { assertClientUsesTokenCredential } from "../../utils/assert.js";
 import { describe, it, assert, beforeEach, afterEach } from "vitest";
-import { createQueueServiceClient } from "../../public/node/utils/clients.js";
+import { createQueueServiceClient } from "../../utils/node/clients.js";
 import {
   getAccountKey,
   getStorageConnectionString,

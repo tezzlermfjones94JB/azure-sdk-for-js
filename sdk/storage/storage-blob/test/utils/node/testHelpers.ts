@@ -5,7 +5,7 @@ import path from "node:path";
 import fs from "node:fs";
 import crypto from "node:crypto";
 import { pipeline } from "node:stream/promises";
-import { getUniqueName } from "../../utils/utils.js";
+import { getUniqueName } from "../testHelpers.js";
 
 /**
  * Read body from downloading operation methods to string.

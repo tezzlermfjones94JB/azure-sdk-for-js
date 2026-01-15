@@ -8,7 +8,7 @@
 
 import type { Recorder } from "@azure-tools/test-recorder";
 import type { TokenCredential } from "@azure/core-auth";
-import type { StoragePipelineOptions, DataLakeSASPermissions } from "../../../../src/index.js";
+import type { StoragePipelineOptions, DataLakeSASPermissions } from "@azure/storage-file-datalake";
 import {
   DataLakeServiceClient,
   DataLakeFileSystemClient,
@@ -18,15 +18,15 @@ import {
   type Pipeline,
   StorageSharedKeyCredential,
   generateDataLakeSASQueryParameters,
-} from "../../../../src/index.js";
+} from "@azure/storage-file-datalake";
 import { AnonymousCredential } from "@azure/storage-blob";
 import { createTestCredential } from "@azure-tools/test-credential";
-import { ensureClientRecording } from "../../utils/recorder.js";
+import { ensureClientRecording } from "../recorder.js";
 import {
   getDfsAccountUrl,
   getDfsAccountName,
   getDfsAccountKey,
-} from "../../../utils/injectables.js";
+} from "../injectables.js";
 
 // Re-export browser-compatible types and utilities
 export {
@@ -37,7 +37,7 @@ export {
   type CreateDataLakeFileSystemClientOptions as BrowserCreateDataLakeFileSystemClientOptions,
   type CreateDataLakeDirectoryClientOptions as BrowserCreateDataLakeDirectoryClientOptions,
   type CreateDataLakeFileClientOptions as BrowserCreateDataLakeFileClientOptions,
-} from "../../utils/clients.js";
+} from "../clients.js";
 
 import {
   type TestAccountKind,
@@ -46,7 +46,7 @@ import {
   createDataLakeFileSystemClient as createDataLakeFileSystemClientWithSecureAuth,
   createDataLakeDirectoryClient as createDataLakeDirectoryClientWithSecureAuth,
   createDataLakeFileClient as createDataLakeFileClientWithSecureAuth,
-} from "../../utils/clients.js";
+} from "../clients.js";
 
 // Node-specific modes include all browser modes plus key-based auth
 const createClientModes = [

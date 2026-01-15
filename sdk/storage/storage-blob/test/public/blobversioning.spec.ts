@@ -11,8 +11,8 @@ import type {
 } from "@azure/storage-blob";
 import { BlobBatch } from "@azure/storage-blob";
 import { describe, it, assert, beforeEach, afterEach } from "vitest";
-import { createBlobServiceClient } from "./utils/clients.js";
-import { bodyToString, getUniqueName, setURLParameter } from "./utils/utils.js";
+import { createBlobServiceClient } from "../utils/clients.js";
+import { bodyToString, getUniqueName, setURLParameter } from "../utils/testHelpers.js";
 import { createTestCredential } from "@azure-tools/test-credential";
 import { isRestError } from "@azure/core-rest-pipeline";
 

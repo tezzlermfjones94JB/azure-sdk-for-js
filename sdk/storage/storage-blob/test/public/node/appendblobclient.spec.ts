@@ -12,17 +12,17 @@ import {
   generateBlobSASQueryParameters,
 } from "@azure/storage-blob";
 import type { StorageSharedKeyCredential } from "@azure/storage-blob";
-import { getUniqueName } from "../utils/utils.js";
-import { createBlobServiceClient, createAppendBlobClient } from "./utils/clients.js";
+import { getUniqueName } from "../../utils/testHelpers.js";
+import { createBlobServiceClient, createAppendBlobClient } from "../../utils/node/clients.js";
 import {
   getAccountKey,
   getAccountSas,
   getCustomerProvidedKey,
   getStorageConnectionString,
 } from "../../utils/injectables.js";
-import { bodyToString, parseJwt } from "./utils/utils.js";
+import { bodyToString, parseJwt } from "../../utils/node/testHelpers.js";
 import { createTestCredential } from "@azure-tools/test-credential";
-import { STORAGE_SCOPE, SERVICE_VERSION } from "../utils/constants.js";
+import { STORAGE_SCOPE, SERVICE_VERSION } from "../../utils/serviceConstants.js";
 import { isRestError } from "@azure/core-rest-pipeline";
 
 describe("AppendBlobClient (node)", () => {

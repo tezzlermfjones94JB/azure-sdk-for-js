@@ -11,7 +11,7 @@ import {
   type Pipeline,
   type StoragePipelineOptions,
 } from "@azure/storage-queue";
-import { getAccountQueueUrl } from "../../utils/injectables.js";
+import { getAccountQueueUrl } from "./injectables.js";
 
 import { ensureClientRecording } from "./recorder.js";
 import type { TokenCredential } from "@azure/core-auth";

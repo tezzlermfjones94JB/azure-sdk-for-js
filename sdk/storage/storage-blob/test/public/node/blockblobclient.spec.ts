@@ -20,21 +20,21 @@ import { isLiveMode, Recorder } from "@azure-tools/test-recorder";
 import crypto from "node:crypto";
 import { createTestCredential } from "@azure-tools/test-credential";
 import { describe, it, assert, beforeEach, afterEach, beforeAll } from "vitest";
-import { createBlobServiceClient, createBlockBlobClient } from "./utils/clients.js";
-import { base64encode, generateRandomUint8Array, getUniqueName } from "../utils/utils.js";
-import { bodyToString, parseJwt } from "./utils/utils.js";
+import { createBlobServiceClient, createBlockBlobClient } from "../../utils/node/clients.js";
+import { base64encode, generateRandomUint8Array, getUniqueName } from "../../utils/testHelpers.js";
+import { bodyToString, parseJwt } from "../../utils/node/testHelpers.js";
 import {
   getAccountKey,
   getStorageConnectionString,
   getStorageConnectionStringWithSas,
 } from "../../utils/injectables.js";
-import { ensureClientRecording } from "../utils/recorder.js";
+import { ensureClientRecording } from "../../utils/recorder.js";
 import { buffer } from "node:stream/consumers";
 import {
   STORAGE_SCOPE,
   BLOCK_BLOB_MAX_UPLOAD_BLOB_BYTES,
   SERVICE_VERSION,
-} from "../utils/constants.js";
+} from "../../utils/serviceConstants.js";
 import { isRestError } from "@azure/core-rest-pipeline";
 
 describe("BlockBlobClient Node.js only", () => {

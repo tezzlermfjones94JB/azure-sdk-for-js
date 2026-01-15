@@ -9,14 +9,14 @@ import type {
   Tags,
 } from "@azure/storage-blob";
 import { BlockBlobTier, ContainerClient, getBlobServiceAccountAudience } from "@azure/storage-blob";
-import { assertClientUsesTokenCredential } from "./utils/assert.js";
+import { assertClientUsesTokenCredential } from "../utils/assert.js";
 import { delay, Recorder } from "@azure-tools/test-recorder";
 import { createTestCredential } from "@azure-tools/test-credential";
 import { describe, it, assert, beforeEach, afterEach, expect } from "vitest";
-import { createBlobServiceClient } from "./utils/clients.js";
-import { base64encode, bodyToString, getUniqueName, isSuperSet } from "./utils/utils.js";
-import { createContainerClient } from "./utils/clients.js";
-import { SimpleTokenCredential } from "./utils/simpleToken.js";
+import { createBlobServiceClient } from "../utils/clients.js";
+import { base64encode, bodyToString, getUniqueName, isSuperSet } from "../utils/testHelpers.js";
+import { createContainerClient } from "../utils/clients.js";
+import { SimpleTokenCredential } from "../utils/simpleToken.js";
 import type {
   Pipeline,
   PipelinePolicy,

@@ -4,7 +4,7 @@
 import { QueueClient, QueueServiceClient } from "@azure/storage-queue";
 import { describe, it, assert, beforeEach, afterEach } from "vitest";
 import { getStorageConnectionString } from "../../utils/injectables.js";
-import { getUniqueName } from "../utils/utils.js";
+import { getUniqueName } from "../../utils/testHelpers.js";
 
 function getConnectionString(mode?: "local"): string {
   const connStr = getStorageConnectionString();

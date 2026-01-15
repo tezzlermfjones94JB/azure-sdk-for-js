@@ -24,7 +24,7 @@ import {
   getGrsAccountSecondaryBlobUrl,
   getOrDestAccountBlobUrl,
   getSoftDeleteAccountBlobUrl,
-} from "../../utils/injectables.js";
+} from "./injectables.js";
 
 import { ensureClientRecording } from "./recorder.js";
 import type { TokenCredential } from "@azure/core-auth";

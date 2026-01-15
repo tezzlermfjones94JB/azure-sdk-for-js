@@ -41,8 +41,8 @@ import {
   getEncryptionScope1,
   getEncryptionScope2,
   getMdAccountName,
-} from "../../utils/injectables.js";
-import * as MOCKS from "../../utils/constants.js";
+} from "./injectables.js";
+import * as MOCKS from "./constants.js";
 
 const dynamicConnectionStringSanitizers = (
   [

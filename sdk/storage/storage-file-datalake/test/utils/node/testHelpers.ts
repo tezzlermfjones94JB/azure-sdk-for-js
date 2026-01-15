@@ -4,7 +4,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { randomBytes } from "node:crypto";
-import { isStreamDebug } from "../../../utils/injectables.js";
+import { isStreamDebug } from "../injectables.js";
 
 /**
  * ONLY AVAILABLE IN NODE.JS RUNTIME.

@@ -11,11 +11,11 @@ import type { TokenCredential } from "@azure/core-auth";
 import { delay, Recorder } from "@azure-tools/test-recorder";
 import { getYieldedValue } from "@azure-tools/test-utils-vitest";
 import { describe, it, assert, beforeEach, afterEach } from "vitest";
-import { createBlobServiceClient, createPageBlobClient } from "./utils/clients.js";
-import { bodyToString, getUniqueName } from "./utils/utils.js";
+import { createBlobServiceClient, createPageBlobClient } from "../utils/clients.js";
+import { bodyToString, getUniqueName } from "../utils/testHelpers.js";
 import { createTestCredential } from "@azure-tools/test-credential";
-import { SimpleTokenCredential } from "./utils/simpleToken.js";
-import { assertClientUsesTokenCredential } from "./utils/assert.js";
+import { SimpleTokenCredential } from "../utils/simpleToken.js";
+import { assertClientUsesTokenCredential } from "../utils/assert.js";
 import { isRestError } from "@azure/core-rest-pipeline";
 
 describe("PageBlobClient", () => {

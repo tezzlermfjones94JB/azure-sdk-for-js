@@ -5,9 +5,9 @@ import type { PublicAccessType, BlobServiceClient } from "@azure/storage-blob";
 import { type ContainerClient, ContainerSASPermissions } from "@azure/storage-blob";
 import { Recorder } from "@azure-tools/test-recorder";
 import { describe, it, assert, beforeEach, afterEach } from "vitest";
-import { createBlobServiceClient } from "./utils/clients.js";
-import { getUniqueName } from "../utils/utils.js";
-import { createContainerClient } from "./utils/clients.js";
+import { createBlobServiceClient } from "../../utils/node/clients.js";
+import { getUniqueName } from "../../utils/testHelpers.js";
+import { createContainerClient } from "../../utils/node/clients.js";
 import { getStorageConnectionString } from "../../utils/injectables.js";
 
 describe("ContainerClient Node.js only", () => {

@@ -4,8 +4,8 @@
 import type { Pipeline } from "@azure/core-rest-pipeline";
 import type { ShareClient, ShareServiceClient } from "@azure/storage-file-share";
 import { RestError } from "@azure/storage-file-share";
-import { createShareServiceClient } from "./utils/clients.js";
-import { getUniqueName } from "./utils/utils.js";
+import { createShareServiceClient } from "../utils/clients.js";
+import { getUniqueName } from "../utils/testHelpers.js";
 import { injectorPolicy, injectorPolicyName } from "../utils/InjectorPolicy.js";
 import { Recorder } from "@azure-tools/test-recorder";
 import { describe, it, assert, beforeEach, afterEach } from "vitest";

@@ -4,8 +4,8 @@
 import { Recorder } from "@azure-tools/test-recorder";
 import type { ShareClient } from "@azure/storage-file-share";
 import { describe, it, beforeEach, afterEach } from "vitest";
-import { createShareServiceClient } from "./utils/clients.js";
-import { getUniqueName } from "../utils/utils.js";
+import { createShareServiceClient } from "../../utils/node/clients.js";
+import { getUniqueName } from "../../utils/testHelpers.js";
 
 describe("StorageSharedKeyCredentialPolicy Node.js only", () => {
   let shareName: string;

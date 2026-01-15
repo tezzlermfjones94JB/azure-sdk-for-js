@@ -14,7 +14,7 @@ import {
   getAccountSas,
   getStorageConnectionString,
   getStorageConnectionStringWithSas,
-} from "../../../utils/injectables.js";
+} from "../injectables.js";
 import {
   type TestAccountKind,
   type CreateQueueClientOptions,
@@ -22,8 +22,8 @@ import {
   createQueueClient as createQueueClientWithSecureAuth,
   createQueueServiceClient as createQueueServiceClientWithSecureAuth,
   pickQueueUrl,
-} from "../../utils/clients.js";
-import { ensureClientRecording } from "../../utils/recorder.js";
+} from "../clients.js";
+import { ensureClientRecording } from "../recorder.js";
 
 function pickSas(kind: TestAccountKind): string | undefined {
   switch (kind) {

@@ -9,10 +9,6 @@ import type {
 } from "@azure-tools/test-recorder";
 import type { Pipeline } from "@azure/core-rest-pipeline";
 
-/** Minimal interface for storage clients that can be configured for recording */
-interface RecordableClient {
-  storageClientContext: { pipeline: Pipeline };
-}
 import {
   getDfsStorageConnectionString,
   getDfsSoftDeleteStorageConnectionString,
@@ -22,8 +18,8 @@ import {
   getDfsSoftDeleteAccountUrl,
   getEncryptionScope1,
   getEncryptionScope2,
-} from "../../utils/injectables.js";
-import * as MOCKS from "../../utils/constants.js";
+} from "./injectables.js";
+import * as MOCKS from "./constants.js";
 
 const dynamicConnectionStringSanitizers = (
   [
@@ -117,10 +113,10 @@ export async function startRecording(recorder: Recorder): Promise<void> {
  * Configures a storage client to use the recorder.
  * The recorder must already be started.
  */
-export function configureStorageClient(recorder: Recorder, client: RecordableClient): void {
+export function configureStorageClient(recorder: Recorder, client: unknown): void {
   const options = recorder.configureClientOptions({});
 
-  const pipeline: Pipeline = client["storageClientContext"].pipeline;
+  const pipeline: Pipeline = (client as { storageClientContext: { pipeline: Pipeline } })["storageClientContext"].pipeline;
   for (const { policy } of options.additionalPolicies ?? []) {
     pipeline.addPolicy(policy, { afterPhase: "Sign", afterPolicies: ["injectorPolicy"] });
   }
@@ -132,7 +128,7 @@ export function configureStorageClient(recorder: Recorder, client: RecordableCli
  */
 export async function ensureClientRecording(
   recorder: Recorder | undefined,
-  client: RecordableClient,
+  client: unknown,
 ): Promise<void> {
   if (!recorder) return;
   await startRecording(recorder);

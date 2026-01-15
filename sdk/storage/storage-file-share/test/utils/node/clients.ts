@@ -23,9 +23,9 @@ import {
   getSoftDeleteAccountName,
   getPremiumFileAccountKey,
   getPremiumFileAccountName,
-} from "../../../utils/injectables.js";
+} from "../injectables.js";
 
-import { ensureClientRecording } from "../../utils/recorder.js";
+import { ensureClientRecording } from "../recorder.js";
 import {
   type TestAccountKind,
   type CreateShareServiceClientOptions,
@@ -38,7 +38,7 @@ import {
   createShareFileClient as createShareFileClientWithSecureAuth,
   pickFileUrl,
   pickSasConnectionString,
-} from "../../utils/clients.js";
+} from "../clients.js";
 import type { TokenCredential } from "@azure/core-auth";
 
 // Re-export everything from cross-platform clients
@@ -50,7 +50,7 @@ export {
   type CreateShareFileClientOptions,
   pickFileUrl,
   pickSasConnectionString,
-} from "../../utils/clients.js";
+} from "../clients.js";
 
 // Node-specific modes that add SharedKeyCredential and SasConnectionString
 const createClientModesNode = [

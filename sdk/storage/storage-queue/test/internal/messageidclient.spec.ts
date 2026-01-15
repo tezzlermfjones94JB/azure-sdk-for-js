@@ -5,8 +5,8 @@ import { QueueClient } from "@azure/storage-queue";
 import { delay, Recorder } from "@azure-tools/test-recorder";
 import { extractConnectionStringParts } from "$internal/utils/utils.common.js";
 import { describe, it, assert, beforeEach, afterEach } from "vitest";
-import { createQueueServiceClient } from "../public/utils/clients.js";
-import { getUniqueName } from "../public/utils/utils.js";
+import { createQueueServiceClient } from "../utils/clients.js";
+import { getUniqueName } from "../utils/testHelpers.js";
 import { getStorageConnectionStringWithSas } from "../utils/injectables.js";
 
 describe("QueueClient messageId methods", () => {

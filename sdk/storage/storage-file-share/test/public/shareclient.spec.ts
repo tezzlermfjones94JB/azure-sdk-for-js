@@ -13,10 +13,10 @@ import type {
   PipelineResponse,
   SendRequest,
 } from "@azure/core-rest-pipeline";
-import { createShareServiceClient, createShareClient } from "./utils/clients.js";
-import { getUniqueName } from "./utils/utils.js";
+import { createShareServiceClient, createShareClient } from "../utils/clients.js";
+import { getUniqueName } from "../utils/testHelpers.js";
 import { getAccountName } from "../utils/injectables.js";
-import { SimpleTokenCredential } from "./utils/simpleToken.js";
+import { SimpleTokenCredential } from "../utils/simpleToken.js";
 
 describe("ShareClient", () => {
   let serviceClient: ShareServiceClient;

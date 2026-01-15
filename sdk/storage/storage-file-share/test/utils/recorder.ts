@@ -9,9 +9,6 @@ import type {
 } from "@azure-tools/test-recorder";
 import type { Pipeline } from "@azure/core-rest-pipeline";
 
-interface RecordableClient {
-  storageClientContext: { pipeline: Pipeline };
-}
 import {
   getStorageConnectionString,
   getSoftDeleteStorageConnectionString,
@@ -22,8 +19,8 @@ import {
   getAccountFileUrl,
   getSoftDeleteAccountFileUrl,
   getPremiumFileAccountFileUrl,
-} from "../../utils/injectables.js";
-import * as MOCKS from "../../utils/constants.js";
+} from "./injectables.js";
+import * as MOCKS from "./constants.js";
 
 const dynamicConnectionStringSanitizers = (
   [
@@ -107,7 +104,7 @@ export const recorderOptions: RecorderStartOptions = {
 
 export async function ensureClientRecording(
   recorder: Recorder | undefined,
-  client: RecordableClient,
+  client: unknown,
 ): Promise<void> {
   if (!recorder) return;
   if (!recorder.recordingId) {
@@ -122,7 +119,8 @@ export async function ensureClientRecording(
   }
   const options = recorder.configureClientOptions({});
 
-  const pipeline: Pipeline = client.storageClientContext.pipeline;
+  const pipeline: Pipeline = (client as { storageClientContext: { pipeline: Pipeline } })
+    .storageClientContext.pipeline;
   for (const { policy } of options.additionalPolicies ?? []) {
     pipeline.addPolicy(policy, { afterPhase: "Sign", afterPolicies: ["injectorPolicy"] });
   }

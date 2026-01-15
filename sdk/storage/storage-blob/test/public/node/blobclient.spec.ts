@@ -8,7 +8,7 @@ import {
   createRandomLocalFile,
   readStreamToLocalFileWithLogs,
   parseJwt,
-} from "./utils/utils.js";
+} from "../../utils/node/testHelpers.js";
 import { delay, isLiveMode, isPlaybackMode, Recorder } from "@azure-tools/test-recorder";
 import {
   BlobSASPermissions,
@@ -21,8 +21,8 @@ import type { BlobClient, BlobServiceClient } from "@azure/storage-blob";
 import type { StorageSharedKeyCredential } from "@azure/storage-common";
 import { describe, it, assert, beforeEach, afterEach, expect } from "vitest";
 import { toSupportTracing } from "@azure-tools/test-utils-vitest";
-import { createBlobClient, createBlobServiceClient } from "./utils/clients.js";
-import { getUniqueName, shouldRunObjectReplicationTests } from "../utils/utils.js";
+import { createBlobClient, createBlobServiceClient } from "../../utils/node/clients.js";
+import { getUniqueName, shouldRunObjectReplicationTests } from "../../utils/testHelpers.js";
 import {
   getAccountKey,
   getAccountSas,
@@ -32,11 +32,11 @@ import {
   getStorageConnectionString,
   getStorageConnectionStringWithSas,
 } from "../../utils/injectables.js";
-import { assertDestReplicationProps, assertSrcReplicationProps } from "../utils/assert.js";
+import { assertDestReplicationProps, assertSrcReplicationProps } from "../../utils/assert.js";
 import { buffer } from "node:stream/consumers";
 import { isRestError } from "@azure/core-rest-pipeline";
 import { createTestCredential } from "@azure-tools/test-credential";
-import { SERVICE_VERSION, STORAGE_SCOPE } from "../utils/constants.js";
+import { SERVICE_VERSION, STORAGE_SCOPE } from "../../utils/serviceConstants.js";
 
 expect.extend({ toSupportTracing });
 

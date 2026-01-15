@@ -69,7 +69,7 @@ import {
   getOrDestAccountName,
   getOrDestAccountKey,
   getGrsAccountSecondaryFileUrl,
-} from "../../../utils/injectables.js";
+} from "../injectables.js";
 import { createTestCredential } from "@azure-tools/test-credential";
 
 import {
@@ -84,8 +84,8 @@ import {
   createPageBlobClient as createPageBlobClientWithSecureAuth,
   pickBlobUrl,
   type CreateContainerClientOptions,
-} from "../../utils/clients.js";
-import { ensureClientRecording } from "../../utils/recorder.js";
+} from "../clients.js";
+import { ensureClientRecording } from "../recorder.js";
 import type { TokenCredential } from "@azure/core-auth";
 
 function pickFileUrl(kind: TestAccountKind): string {

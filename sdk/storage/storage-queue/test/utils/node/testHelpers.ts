@@ -1,7 +1,7 @@
 // Copyright (c) Microsoft Corporation.
 // Licensed under the MIT License.
 
-import { getUniqueName } from "../../utils/utils.js";
+import { getUniqueName } from "../testHelpers.js";
 
 export { getUniqueName };
 

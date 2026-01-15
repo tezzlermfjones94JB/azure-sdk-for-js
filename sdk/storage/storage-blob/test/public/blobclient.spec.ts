@@ -14,13 +14,13 @@ import { isRestError } from "@azure/core-rest-pipeline";
 import { describe, it, assert, beforeEach, afterEach, expect } from "vitest";
 import { toSupportTracing } from "@azure-tools/test-utils-vitest";
 import type { OperationOptions } from "@azure/core-client";
-import { createBlobClient, createBlobServiceClient } from "./utils/clients.js";
+import { createBlobClient, createBlobServiceClient } from "../utils/clients.js";
 import {
   base64encode,
   bodyToString,
   getUniqueName,
   shouldRunObjectReplicationTests,
-} from "./utils/utils.js";
+} from "../utils/testHelpers.js";
 import {
   getCustomerProvidedKey,
   getEncryptionScope1,
@@ -28,9 +28,9 @@ import {
   getOrDestContainerName,
   getOrSourceContainerName,
 } from "../utils/injectables.js";
-import { assertDestReplicationProps, assertSrcReplicationProps } from "./utils/assert.js";
+import { assertDestReplicationProps, assertSrcReplicationProps } from "../utils/assert.js";
 import { createTestCredential } from "@azure-tools/test-credential";
-import { STORAGE_SCOPE } from "./utils/constants.js";
+import { STORAGE_SCOPE } from "../utils/serviceConstants.js";
 
 expect.extend({ toSupportTracing });
 

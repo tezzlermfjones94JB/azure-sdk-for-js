@@ -1,0 +1,17 @@
+{
+  "extends": "../../../tsconfig.test.node.base.json",
+  "compilerOptions": {
+    "paths": {
+      "@azure/storage-blob": ["./src/index.ts"],
+      "$internal/*": ["./src/*"]
+    }
+  },
+  "include": ["./test/internal/**/*.ts", "./test/utils/**/*.ts", "./src"],
+  "exclude": [
+    "./src/internal-avro/AvroReadableFromBlob.ts",
+    "./**/*-browser.mts",
+    "./**/*-react-native.mts",
+    "./test/**/browser",
+    "./src/internal-avro/AvroReadableFromBlob.ts"
+  ]
+}

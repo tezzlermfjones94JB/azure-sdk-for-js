@@ -7,13 +7,13 @@ import {
   BlockBlobTier,
   getBlobServiceAccountAudience,
 } from "@azure/storage-blob";
-import { assertClientUsesTokenCredential } from "./utils/assert.js";
+import { assertClientUsesTokenCredential } from "../utils/assert.js";
 import { Recorder } from "@azure-tools/test-recorder";
 import { createTestCredential } from "@azure-tools/test-credential";
 import { describe, it, assert, beforeEach, afterEach } from "vitest";
-import { createBlobServiceClient, createBlockBlobClient } from "./utils/clients.js";
-import { base64encode, bodyToString, getUniqueName } from "./utils/utils.js";
-import { SimpleTokenCredential } from "./utils/simpleToken.js";
+import { createBlobServiceClient, createBlockBlobClient } from "../utils/clients.js";
+import { base64encode, bodyToString, getUniqueName } from "../utils/testHelpers.js";
+import { SimpleTokenCredential } from "../utils/simpleToken.js";
 import { isRestError } from "@azure/core-rest-pipeline";
 import { getCustomerProvidedKey } from "../utils/injectables.js";
 

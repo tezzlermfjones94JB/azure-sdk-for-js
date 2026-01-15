@@ -9,9 +9,9 @@ import {
   type AppendBlobClient,
 } from "@azure/storage-blob";
 import { describe, it, assert, beforeEach, afterEach } from "vitest";
-import { createAppendBlobClient, createBlobServiceClient } from "./utils/clients.js";
-import { bodyToString, getUniqueName } from "./utils/utils.js";
-import { SimpleTokenCredential } from "./utils/simpleToken.js";
+import { createAppendBlobClient, createBlobServiceClient } from "../utils/clients.js";
+import { bodyToString, getUniqueName } from "../utils/testHelpers.js";
+import { SimpleTokenCredential } from "../utils/simpleToken.js";
 import { isRestError } from "@azure/core-rest-pipeline";
 import { createTestCredential } from "@azure-tools/test-credential";
 
