@@ -10,8 +10,8 @@ import {
   type ContainerClient,
   SASProtocol,
   generateBlobSASQueryParameters,
-} from "../../../src/index.js";
-import type { StorageSharedKeyCredential } from "../../../src/index.js";
+} from "@azure/storage-blob";
+import type { StorageSharedKeyCredential } from "@azure/storage-blob";
 import { getUniqueName } from "../utils/utils.js";
 import { createBlobServiceClient, createAppendBlobClient } from "./utils/clients.js";
 import {

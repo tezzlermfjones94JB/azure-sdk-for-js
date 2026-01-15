@@ -6,7 +6,7 @@ import type {
   ShareDirectoryClient,
   ShareFileClient,
   SignedIdentifier,
-} from "../../../src/index.js";
+} from "@azure/storage-file-share";
 import { describe, it, assert, beforeEach, afterEach } from "vitest";
 import { createShareServiceClient } from "./utils/clients.js";
 import { bodyToString } from "./utils/utils.js";

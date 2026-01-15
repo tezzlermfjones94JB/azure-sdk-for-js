@@ -8,7 +8,10 @@ import type {
   HeaderSanitizer,
 } from "@azure-tools/test-recorder";
 import type { Pipeline } from "@azure/core-rest-pipeline";
-import type { StorageClient } from "../../../src/StorageClient.js";
+
+interface RecordableClient {
+  storageClientContext: { pipeline: Pipeline };
+}
 import {
   getStorageConnectionString,
   getStorageConnectionStringWithSas,
@@ -57,9 +60,10 @@ export const recorderOptions: RecorderStartOptions = {
   removeCentralSanitizers: ["AZSDK2008", "AZSDK4001", "AZSDK2011"],
 };
 
-export async function ensureClientRecording<
-  ClientT extends Omit<StorageClient, "isHttps" | "credential">,
->(recorder: Recorder | undefined, client: ClientT): Promise<void> {
+export async function ensureClientRecording(
+  recorder: Recorder | undefined,
+  client: RecordableClient,
+): Promise<void> {
   if (!recorder) return;
   if (!recorder.recordingId) {
     await recorder.start(recorderOptions);
@@ -70,7 +74,7 @@ export async function ensureClientRecording<
   }
   const options = recorder.configureClientOptions({});
 
-  const pipeline: Pipeline = (client as any).storageClientContext.pipeline;
+  const pipeline: Pipeline = client.storageClientContext.pipeline;
   for (const { policy } of options.additionalPolicies ?? []) {
     pipeline.addPolicy(policy, { afterPhase: "Sign", afterPolicies: ["injectorPolicy"] });
   }

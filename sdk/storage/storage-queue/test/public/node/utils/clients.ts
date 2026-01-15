@@ -6,7 +6,7 @@ import {
   QueueClient,
   QueueServiceClient,
   StorageSharedKeyCredential,
-} from "../../../../src/index.js";
+} from "@azure/storage-queue";
 import type { TokenCredential } from "@azure/core-auth";
 import {
   getAccountKey,

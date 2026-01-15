@@ -8,7 +8,11 @@ import type {
   HeaderSanitizer,
 } from "@azure-tools/test-recorder";
 import type { Pipeline } from "@azure/core-rest-pipeline";
-import type { StorageClient } from "../../../src/StorageClient.js";
+
+/** Minimal interface for storage clients that can be configured for recording */
+interface RecordableClient {
+  storageClientContext: { pipeline: Pipeline };
+}
 import {
   getDfsStorageConnectionString,
   getDfsSoftDeleteStorageConnectionString,
@@ -113,7 +117,7 @@ export async function startRecording(recorder: Recorder): Promise<void> {
  * Configures a storage client to use the recorder.
  * The recorder must already be started.
  */
-export function configureStorageClient(recorder: Recorder, client: StorageClient): void {
+export function configureStorageClient(recorder: Recorder, client: RecordableClient): void {
   const options = recorder.configureClientOptions({});
 
   const pipeline: Pipeline = client["storageClientContext"].pipeline;
@@ -128,7 +132,7 @@ export function configureStorageClient(recorder: Recorder, client: StorageClient
  */
 export async function ensureClientRecording(
   recorder: Recorder | undefined,
-  client: StorageClient,
+  client: RecordableClient,
 ): Promise<void> {
   if (!recorder) return;
   await startRecording(recorder);

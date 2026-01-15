@@ -12,7 +12,7 @@ import {
   newPipeline,
   type Pipeline,
   StorageSharedKeyCredential,
-} from "../../../../src/index.js";
+} from "@azure/storage-blob";
 import {
   ShareServiceClient,
   StorageSharedKeyCredential as FileStorageSharedKeyCredential,

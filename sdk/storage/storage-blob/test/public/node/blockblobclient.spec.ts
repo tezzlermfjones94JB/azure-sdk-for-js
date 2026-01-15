@@ -7,7 +7,7 @@ import type {
   BlobClient,
   ContainerClient,
   BlobServiceClient,
-} from "../../../src/index.js";
+} from "@azure/storage-blob";
 import {
   BlockBlobClient,
   newPipeline,
@@ -15,7 +15,7 @@ import {
   BlobSASPermissions,
   SASProtocol,
   AnonymousCredential,
-} from "../../../src/index.js";
+} from "@azure/storage-blob";
 import { isLiveMode, Recorder } from "@azure-tools/test-recorder";
 import crypto from "node:crypto";
 import { createTestCredential } from "@azure-tools/test-credential";

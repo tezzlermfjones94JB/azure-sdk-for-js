@@ -16,8 +16,8 @@ import {
   type ContainerClient,
   SASProtocol,
   generateBlobSASQueryParameters,
-} from "../../../src/index.js";
-import type { BlobClient, BlobServiceClient } from "../../../src/index.js";
+} from "@azure/storage-blob";
+import type { BlobClient, BlobServiceClient } from "@azure/storage-blob";
 import type { StorageSharedKeyCredential } from "@azure/storage-common";
 import { describe, it, assert, beforeEach, afterEach, expect } from "vitest";
 import { toSupportTracing } from "@azure-tools/test-utils-vitest";

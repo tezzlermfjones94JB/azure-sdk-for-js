@@ -2,7 +2,7 @@
 // Licensed under the MIT License.
 
 import { isTokenCredential } from "@azure/core-auth";
-import type { BlobGetPropertiesResponse, StorageClient } from "../../../src/index.js";
+import type { BlobGetPropertiesResponse, StorageClient } from "@azure/storage-blob";
 import { assert } from "vitest";
 
 export function assertClientUsesTokenCredential(client: StorageClient): void {

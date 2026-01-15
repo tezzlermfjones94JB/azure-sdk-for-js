@@ -13,7 +13,7 @@ import {
   type Pipeline,
   type ShareClientOptions,
   type StorageSharedKeyCredential,
-} from "../../../src/index.js";
+} from "@azure/storage-file-share";
 import {
   getAccountFileUrl,
   getSoftDeleteAccountFileUrl,

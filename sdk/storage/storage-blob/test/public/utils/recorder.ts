@@ -8,7 +8,7 @@ import type {
   HeaderSanitizer,
 } from "@azure-tools/test-recorder";
 import type { Pipeline } from "@azure/core-rest-pipeline";
-import type { StorageClient } from "../../../src/index.js";
+import type { StorageClient } from "@azure/storage-blob";
 import {
   getStorageConnectionString,
   getDfsStorageConnectionString,

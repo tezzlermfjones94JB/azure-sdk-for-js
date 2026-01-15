@@ -7,13 +7,13 @@ import {
   BlobBatch,
   BlobServiceClient,
   newPipeline,
-} from "../../../src/index.js";
+} from "@azure/storage-blob";
 import type {
   ContainerClient,
   BlockBlobClient,
   BlobBatchClient,
   StorageSharedKeyCredential,
-} from "../../../src/index.js";
+} from "@azure/storage-blob";
 import { describe, it, assert, beforeEach, afterEach } from "vitest";
 import { createBlobServiceClient } from "./utils/clients.js";
 import { getUniqueName } from "../utils/utils.js";

@@ -2,7 +2,7 @@
 // Licensed under the MIT License.
 
 import { Recorder } from "@azure-tools/test-recorder";
-import type { DataLakeFileSystemClient, DataLakeFileClient } from "../../../src/index.js";
+import type { DataLakeFileSystemClient, DataLakeFileClient } from "@azure/storage-file-datalake";
 import { createDataLakeServiceClient } from "../../public/utils/clients.js";
 import { getUniqueName } from "../../public/utils/utils.js";
 import { bodyToString } from "../../public/browser/utils/utils.js";

@@ -9,8 +9,8 @@ import {
   BlobSASPermissions,
   StorageBlobAudience,
   SASProtocol,
-} from "../../../src/index.js";
-import { PageBlobClient, StorageSharedKeyCredential } from "../../../src/index.js";
+} from "@azure/storage-blob";
+import { PageBlobClient, StorageSharedKeyCredential } from "@azure/storage-blob";
 import { delay, Recorder, isLiveMode } from "@azure-tools/test-recorder";
 import { describe, it, assert, beforeEach, afterEach } from "vitest";
 import { createBlobServiceClient, createPageBlobClient } from "./utils/clients.js";
